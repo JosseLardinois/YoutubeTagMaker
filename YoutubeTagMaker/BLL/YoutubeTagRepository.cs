@@ -51,10 +51,11 @@ namespace YoutubeTagMaker.BLL
                 }
             }
 
-            return tags.GroupBy(t => t)
+            var tagz = tags.GroupBy(t => t)
                        .OrderByDescending(g => g.Count())
                        .Select(g => (Tag: g.Key, Count: g.Count()))
                        .ToList();
+            return tagz;
         }
 
     }

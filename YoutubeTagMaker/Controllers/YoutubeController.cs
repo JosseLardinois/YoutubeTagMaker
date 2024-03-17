@@ -11,8 +11,9 @@ namespace YoutubeTagMaker.Controllers
     {
         private readonly ILogger<YoutubeController> _logger;
         private readonly IYoutubeTagRepository _youtubeTagRepository;
-        public YoutubeController(ILogger<YoutubeController> logger)
+        public YoutubeController(ILogger<YoutubeController> logger, IYoutubeTagRepository youtubeTagRepository)
         {
+            _youtubeTagRepository = youtubeTagRepository;
             _logger = logger;
         }
 
@@ -22,13 +23,15 @@ namespace YoutubeTagMaker.Controllers
         {
             if(channelId != null || channelId != string.Empty)
             {
-                var mostUsedTags = _youtubeTagRepository.GetMostUsedTags(channelId);
-                return Ok(mostUsedTags);
+                var mostUsedTags = await _youtubeTagRepository.GetMostUsedTags(channelId);
+
+                if (mostUsedTags.Any())
+                {
+                    var firstItem = mostUsedTags.FirstOrDefault();
+                    return Ok(firstItem.Tag);
+                }
             }
-            else
-            {
                 return BadRequest(500);
-            }
         }
     }
 }
