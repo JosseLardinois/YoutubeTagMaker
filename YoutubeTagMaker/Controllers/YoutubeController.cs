@@ -21,17 +21,30 @@ namespace YoutubeTagMaker.Controllers
         [Route("api/youtube/mostUsedTags")]
         public async Task<IActionResult> GetMostUsedTags(string channelId)
         {
-            if(channelId != null || channelId != string.Empty)
+            if (string.IsNullOrWhiteSpace(channelId))
+            {
+                return BadRequest("Invalid channel ID provided.");
+            }
+
+            try
             {
                 var mostUsedTags = await _youtubeTagRepository.GetMostUsedTags(channelId);
 
                 if (mostUsedTags.Any())
                 {
-                    var firstItem = mostUsedTags.FirstOrDefault();
-                    return Ok(firstItem.Tag);
+                    // Serialize and return the entire list of tuples (tags and their counts)
+                    return Ok(mostUsedTags);
+                }
+                else
+                {
+                    return NotFound("No tags found for the specified channel.");
                 }
             }
-                return BadRequest(500);
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while retrieving the most used tags.");
+                return StatusCode(500, "An internal server error occurred.");
+            }
         }
     }
-}
+    }
