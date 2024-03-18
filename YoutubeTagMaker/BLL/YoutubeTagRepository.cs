@@ -16,9 +16,9 @@ namespace YoutubeTagMaker.BLL
             _logger = logger;
             _youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
-                ApiKey = "AIzaSyC_iL_BLTaeDQgvQ3XGgqdu16gzhWVdWxE",
+                ApiKey = Environment.GetEnvironmentVariable("YoutubeAPIKey"),//"AIzaSyC_iL_BLTaeDQgvQ3XGgqdu16gzhWVdWxE",
                 ApplicationName = this.GetType().ToString()
-            });
+            }) ;
         }
 
         public async Task<List<TagCount>> GetMostUsedTags(string channelId)
