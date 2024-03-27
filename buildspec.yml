@@ -12,5 +12,5 @@ artifacts:
   files:
     - '**/*'
     - 'taskdef.json'
-    - 'appspec.yml'
+    - 'appspec.yaml'
   base-directory: './'
