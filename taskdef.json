@@ -1,6 +1,6 @@
 {
   "family": "youtubetag-webapi",
-  "executionRoleArn": "arn:aws:iam::<account-id>:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::075206908135:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "webapi-container",
