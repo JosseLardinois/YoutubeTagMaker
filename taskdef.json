@@ -1,8 +1,8 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:eu-central-1:075206908135:task-definition/YTDef:1",
+    "taskDefinitionArn": "arn:aws:ecs:eu-central-1:075206908135:task-definition/YoutubeTagTaskDefinition:1",
     "containerDefinitions": [
         {
-            "name": "followerservice",
+            "name": "YoutubeTagContainer",
             "image": "075206908135.dkr.ecr.eu-central-1.amazonaws.com/youtubetagrepo:latest",
             "cpu": 0,
             "links": [],
@@ -37,7 +37,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/task-defenitionpush",
+                    "awslogs-group": "/ecs/YoutubeTagTaskDefinition",
                     "awslogs-region": "eu-central-1",
                     "awslogs-stream-prefix": "ecs"
                 },
@@ -46,7 +46,7 @@
             "systemControls": []
         }
     ],
-    "family": "task-defenitionpush",
+    "family": "YoutubeTagTaskDefinition",
     "executionRoleArn": "arn:aws:iam::075206908135:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "revision": 1,
