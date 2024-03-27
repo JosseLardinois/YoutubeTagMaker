@@ -10,5 +10,5 @@ phases:
       - dotnet publish -c release -o ./build_output YoutubeTagMaker/YoutubeTagMaker.csproj
 artifacts:
   files:
-    - **/*
-  base-directory: deploy
+    - '**/*'
+  base-directory: './build_output'
