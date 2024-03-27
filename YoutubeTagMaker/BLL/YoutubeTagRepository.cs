@@ -16,7 +16,7 @@ namespace YoutubeTagMaker.BLL
             _logger = logger;
             _youtubeService = new YouTubeService(new BaseClientService.Initializer()
             {
-                ApiKey = Environment.GetEnvironmentVariable("YoutubeAPIKey"),//"AIzaSyC_iL_BLTaeDQgvQ3XGgqdu16gzhWVdWxE",
+                ApiKey = Environment.GetEnvironmentVariable("YoutubeAPIKey"),
                 ApplicationName = this.GetType().ToString()
             }) ;
         }
