@@ -11,4 +11,6 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: './build_output'
+    - 'taskdef.json'
+    - 'appspec.yml'
+  base-directory: './'
