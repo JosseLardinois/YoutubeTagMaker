@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:eu-central-1:075206908135:task-definition/YoutubeTagMakerTD:1"
+        LoadBalancerInfo:
+          ContainerName: "youtubetagapi"
+          ContainerPort: 80
