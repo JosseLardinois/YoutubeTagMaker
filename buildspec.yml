@@ -10,7 +10,5 @@ phases:
       - dotnet publish -c release -o ./build_output YoutubeTagMaker/YoutubeTagMaker.csproj
 artifacts:
   files:
-    - '**/*'
-    - 'taskdef.json'
-    - 'appspec.yaml'
-  base-directory: './'
+    - **/*
+  base-directory: deploy
