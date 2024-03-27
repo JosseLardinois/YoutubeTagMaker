@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "arn:aws:ecs:eu-central-1:075206908135:task-definition/YoutubeTagDef:1"
+        TaskDefinition: "arn:aws:ecs:eu-central-1:075206908135:service/YoutubeTagCluster/YTTagService"
         LoadBalancerInfo:
-          ContainerName: "YoutubeTAG"
+          ContainerName: "youtubetag"
           ContainerPort: 80
