@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:eu-central-1:075206908135:task-definition/YoutubeTagTaskDefinition:1",
+    "taskDefinitionArn": "arn:aws:ecs:eu-central-1:075206908135:task-definition/YoutubeTagTaskDefinition:6",
     "containerDefinitions": [
         {
             "name": "YoutubeTagContainer",
