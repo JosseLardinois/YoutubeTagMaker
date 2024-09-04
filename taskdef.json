@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:eu-central-1:075206908135:task-definition/YoutubeTagTaskDefinition:6",
+    "taskDefinitionArn": "arn:aws:ecs:eu-west-1:075206908135:task-definition/YTTagTaskDefenition:1",
     "containerDefinitions": [
         {
             "name": "YoutubeTagContainer",
-            "image": "075206908135.dkr.ecr.eu-central-1.amazonaws.com/youtubetagrepo:latest",
+            "image": "075206908135.dkr.ecr.eu-west-1.amazonaws.com/youtubetagrepo",
             "cpu": 0,
             "links": [],
             "portMappings": [
@@ -37,8 +37,8 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/YoutubeTagTaskDefinition",
-                    "awslogs-region": "eu-central-1",
+                    "awslogs-group": "/ecs/YTTagTaskDefenition:1",
+                    "awslogs-region": "eu-west-1",
                     "awslogs-stream-prefix": "ecs"
                 },
                 "secretOptions": []
