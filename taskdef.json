@@ -37,7 +37,7 @@
                 "logDriver": "awslogs",
                 "options": {
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/YTTagTaskDefenition:1",
+                    "awslogs-group": "/ecs/YTTagTaskDefenition",
                     "awslogs-region": "eu-west-1",
                     "awslogs-stream-prefix": "ecs"
                 },
